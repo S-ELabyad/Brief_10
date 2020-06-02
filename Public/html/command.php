@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
   $Image_produit=$_FILES['Image_produit'];
 
   $picture=$_FILES['Image_produit']['name'];
-  $upload="uploads/".$picture;
+  $upload="../uploads/".$picture;
   $query="INSERT INTO `produit` (Id_categorie,Description_produit,Quantite_Max,Prix_produit,Image_produit) VALUES(?,?,?,?,?)";
   $stmt=$con->prepare( $query);
   $stmt->bind_param("issss",$Id_categorie,$Description_produit,$Quantite_Max,$Prix_produit,$upload);

@@ -1,6 +1,6 @@
 
 <?php
-include('login.php');
+include('../login.php');
 ?>
 <?php
 //connect to database
@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
         $query="SELECT * FROM `admin` WHERE  email_admin='".$email_admin."'&&pass_admin='".$pass_admin."'";
              if(mysqli_query($con,$query)){
                  
-                 header('Location:admin.php');
+                 header('Location:../html/admin.php');
   }
   } 
     else{
@@ -31,8 +31,8 @@ if(isset($_POST['submit'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
-    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="../css/login.css">
+   
   
     
     
@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
 </div>
 
     <div class="contener">
-       <div class="photo"> <img  src="image/imag1.jpg" alt="" class="image" ></div>
+       <div class="photo"> <img  src="../img/imag1.jpg" alt="" class="image" ></div>
         <div class="form">
         <h3 class=titre2> Je me connecte</h3>
         <p class="titre3">Encore quelques clics et le tour est joué !</p>
