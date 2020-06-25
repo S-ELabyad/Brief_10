@@ -8,73 +8,29 @@ session_start();
 //connect to database
 $con =mysqli_connect($servername,$username,$password,$dbname);
 
-// if (isset($_POST['Email'])){
-//     $Email = stripslashes($_REQUEST['Email']);
-//     $Email = mysqli_real_escape_string($con, $Email);
-//     $Password = stripslashes($_REQUEST['Password']);
-//     $Password = mysqli_real_escape_string($con, $Password);
-//       $query = "SELECT * FROM `client` WHERE Email='$Email' and Password='$Password'";
-//     $result = mysqli_query($con,$query) or die(mysql_error());
-//     $rows = mysqli_num_rows($result);
-//     if($rows==1){
-//         $_SESSION['Email'] = $Email;
-//         header("Location: page2.php");
-//     }else{
-//       echo "Le nom d'utilisateur ou le mot de passe est incorrect.";
-//     }
-//   }
-
-// if (isset($_POST['submit'])) {
-//     $Email = $_POST['Email'];
-//     $Password = $_POST['Password'];
-
-//     //select table
-//     $sql = "SELECT * FROM client WHERE Email='".$Email."' AND Password='".$Password."' ";
-//     $res=mysqli_query($con,$sql);
-//     if (mysqli_num_rows($res) == 1) {
-//     echo "page2.php";
-//     exit();
-//     } else {
-//     echo "Invalid log in information.";
-//     exit();
-//         header ('location:page2.php');
-//     }
-// }
  if(isset($_POST['submit'])){
    $Email=$_POST['Email'];
    $Password=$_POST['Password'];
+
    if($Email&&$Password)
    {
     //    $Password=md5($Password);
-       $query="SELECT * FROM `client` WHERE  Email='".$Email."'&&Password='".$Password."'";
+       $query="SELECT * FROM client  WHERE Email = '' && Password = '$Password'";
+      
+
       if(mysqli_query($con,$query)){
         header('Location:PageProduits.php');
+       
       }
-
-      
-    //     if ($Email&&$Password)
-    //   {
-
-    //       $query= "INSERT INTO `client` ( `Email`, `Password`) VALUES ( 'admin@gmail.com', 'passwordadmin')";
-    //       $query="SELECT * FROM `client` WHERE  Email='".$Email."'&&Password='".$Password."'";
-    //            if(mysqli_query($con,$query)){
-                   
-    //                header('Location:admin.php');
-    // }
-    // } 
-      else{
-        echo 'bad'.$query .mysqli_error($con);
-      }
-    
-    
-           
-       }
+ 
+       
        else {
            echo "Email et mot de passe incorrect";
            
        }
        
     }
+  }
 
 
 

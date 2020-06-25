@@ -59,7 +59,7 @@ if(isset($_POST['submit'])){
     <input type="file" class="form-control-file" id="exampleFormControlFile1" name="Image_produit">
   </div>
   
-  <button type="button" class="btn btn-outline-primary" style="padding: 0.375rem 2.75rem;margin-left: 30rem;margin-top: -2rem;"><a href="admin.php" style="text-decoration: none;">Retour</a></button>
+  <button type="button" class="btn btn-outline-primary" style="padding: 0.375rem 2.75rem;margin-left: 30rem;margin-top: -4rem;"><a href="admin.php" style="text-decoration: none;">Retour</a></button>
   <button type="submit" name="submit" class="btn btn-outline-primary" id="btnAddProductExecute" style="padding: 0.375rem 2.75rem;margin-top: -2rem;"style="text-decoration: none;">Envoyer</a></button>
 </form>
 

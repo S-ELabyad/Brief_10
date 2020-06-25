@@ -1,10 +1,10 @@
 
 <?php
-include('../login.php');
+include('login.php');
 ?>
 <?php
 //connect to database
-$con =mysqli_connect($servername,$username,$password,$dbname);
+// $con =mysqli_connect($servername,$username,$password,$dbname);
 
 if(isset($_POST['submit'])){
     $email_admin=$_POST['email_admin'];
@@ -13,16 +13,17 @@ if(isset($_POST['submit'])){
     if ($email_admin&&$pass_admin)
     {
 
-        $query= "INSERT INTO `admin` ( `id_admin`,`email_admin`, `pass_admin`) VALUES ('', '?', '?')";
-        $query="SELECT * FROM `admin` WHERE  email_admin='".$email_admin."'&&pass_admin='".$pass_admin."'";
+        $query= "INSERT INTO admin ( `id_admin`,`email_admin`, `pass_admin`) VALUES ('', '?', '?')";
+        $query="SELECT * FROM admin WHERE  email_admin='$email_admin' && pass_admin='$pass_admin'";
              if(mysqli_query($con,$query)){
                  
                  header('Location:../html/admin.php');
   }
-  } 
+   
     else{
-      echo 'bad'.$query .mysqli_error($con);
+        echo 'bad'.$query .mysqli_error($con);
     }
+}
 }
 ?>
 
