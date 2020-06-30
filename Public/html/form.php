@@ -3,6 +3,7 @@ include('header.php');
 include('../html/login.php');
 ?>
 <?php
+
  if(isset($_POST['submit']))
  {
      $CIN=htmlentities(trim($_POST['CIN']));
@@ -84,7 +85,7 @@ include('../html/login.php');
 <!-- <input type="text" name="Adresse" placeholder="Adresse"> -->
 <div class="form-group">
     
-    <input type="number" class="form-control" id="formGroupExampleInput2" name="NumCarte" placeholder="NumCarte">
+    <input type="text" class="form-control" id="formGroupExampleInput2" name="NumCarte" placeholder="NumCarte">
   </div>
 <!-- <input type="number" name="NumCarte" placeholder="NumCarte"> -->
 <input type="submit" value="login" name="submit" placeholder="submit" style="height: 53px;border: thin; background-color: #cc2323; border-radius: 7px;color: white;padding: 12px 30px;">

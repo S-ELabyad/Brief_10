@@ -298,7 +298,7 @@
                                 
 
                             }
-                            // print_r($collectionQTE);
+                            print_r($collectionQTE);
                         
                             //insertion dans la commande
                             if($problemStock==false)
